@@ -4,23 +4,30 @@
  * and open the template in the editor.
  */
 package lotteria;
-
+import java.util.Scanner;
+import java.util.InputMismatchException;
 /**
  *
  * @author jacopo xu
  */
 public class Lotteria {
-
     /**
      * @param args the command line arguments
      * @throws InterruptedException 
      */
-    public static void main(String[] args) throws InterruptedException {       
+    public static void main(String[] args) throws InterruptedException {
+       Scanner Scanner = new Scanner(System.in);
+
+       try{
+        //Richiesta input all'utente della dimensione della matrice
+        System.out.println("Inserisci il numero della dimensione della matrice dei numeri da estrarre: ");
+        final int n = Scanner.nextInt();
+
         // Comunicazione avvio lotteria
         System.out.println("Avvio lotteria");
         
         // Istanza ed avvio del thread Estrazione
-        Estrazione e = new Estrazione(5);
+        Estrazione e = new Estrazione(n);
         e.start();
         e.join();
         
@@ -49,6 +56,12 @@ public class Lotteria {
         // Comunicazione fine lotteria
         e.stampaVincitori(); // stampa dei vincitori
         System.out.println("Fine del gioco");
+    }
+    catch (InputMismatchException e) {
+        System.out.println("Numero non valido");
+    } finally {
+        Scanner.close(); // Chiusura del scanner
+    }
     }
 }
    

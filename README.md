@@ -35,7 +35,9 @@ La classe `Giocatore` estende `Thread` e rappresenta un giocatore nel gioco.
 ## Riferimenti alle librerie
 Il progetto utilizza le seguenti librerie Java:
 - `java.util.Random` per generare numeri casuali.
-- `java.util.logging` per gestire la registrazione delle eccezioni.
+- `java.util.logging.Logger` per gestire la registrazione delle eccezioni.
+- `java.util.logging.Level` gestisce il livello di gravità delle eccezioni.
+- `java.util.Scanner` interfaccia per poter raccogliere gli input dall'utente.
 
 ## Scenari alternativi di funzionamento
 1. **Nessun vincitore:** Se nessun giocatore sceglie un numero che corrisponde a quelli estratti, il programma stamperà "Nessun vincitore."
@@ -43,4 +45,4 @@ Il progetto utilizza le seguenti librerie Java:
 3. **Numeri duplicati:** Se nella matrice di numeri estratti ci sono numeri duplicati, il programma non avrà problemi, poiché il metodo `verifica` è progettato per trovare il numero anche se è presente più di una volta.
 
 ## Commento dell'esecuzione
-L'esecuzione del programma inizia con il messaggio "Avvio lotteria". Viene quindi avviato un thread per l'estrazione dei numeri, seguito da un conto alla rovescia per ogni giocatore prima che verifichi il proprio numero. Al termine della verifica, vengono mostrati i numeri estratti e i vincitori, con un messaggio finale "Fine del gioco". I messaggi stampati nel terminale guidano l'utente attraverso il processo di gioco, rendendo l'esperienza interattiva e chiara.
+Innanzitutto, verrà chiesto all'utente di fornire un numero "n" in input per decidere la dimensione della maatrice. Poi, l'esecuzione del programma inizia con il messaggio "Avvio lotteria". Viene quindi avviato un thread per l'estrazione dei numeri, seguito da un conto alla rovescia per ogni giocatore prima che verifichi il proprio numero. Al termine della verifica, vengono mostrati i numeri estratti e i vincitori, con un messaggio finale "Fine del gioco". I messaggi stampati nel terminale guidano l'utente attraverso il processo di gioco, rendendo l'esperienza interattiva e chiara.
